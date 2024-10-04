@@ -1,0 +1,28 @@
+.q-list-header{
+    font-size: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+}
+.professor-container{
+    padding: 10px;
+}
+
+.card-prof{
+    padding: 15px;
+}
+
+.tick-icon {
+    color: green;
+    font-size: 20px;
+  }
+  .cross-icon{
+    color: rgb(185, 4, 4);
+    font-size: 20px;
+  }
+  .indicator{
+    margin-top: 20px;
+  }
+
+  .prof-indicator{
+    border-radius: 20px;
+  }

@@ -1,0 +1,44 @@
+
+<div class="question-container">
+    <div class="inner-q-container"> 
+        @if(role=='q-prof')
+        {
+            <h1>You can answer the question here by clicking on answer</h1>
+            <mat-card>
+                <mat-card-content>
+                        <div class="q-ans-btn">
+                            <p style="font-size: larger;"> {{question?.question}}</p>
+                            @if (!answering) {
+                                <button mat-raised-button style="background: #03a41c; color: rgb(255, 255, 255);" (click)="answering=!answering">Answer</button>
+                            }
+                        </div>
+                        @if (answering){
+                            <mat-form-field class="answer-form-field">
+                                <mat-label>Answer</mat-label>
+                                <textarea
+                                name="answer"
+                                matInput
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="1"
+                                cdkAutosizeMaxRows="20"
+                                #answerArea></textarea>
+                            </mat-form-field> <br>
+                            <button mat-raised-button style="background-color: #2222f0; color: white;" (click)="onAnswerSubmit(answerArea.value)">Submit</button>
+                    }
+                </mat-card-content>
+            </mat-card>
+        }
+        @if(role =='q-stud'){
+            <mat-card>
+                <mat-card-content>
+                    <p style="font-size: larger;">Q. {{question?.question}}</p>
+                    <p>Answer: {{question?.isAnswered ? question?.answer : "This question is not answered yet"}}</p>
+                </mat-card-content>
+            </mat-card>
+        }
+        <button mat-raised-button color="primary" (click)="navigateBack()" class="navigateBack">Back</button>
+    </div>
+    
+
+</div>

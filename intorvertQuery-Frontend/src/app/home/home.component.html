@@ -1,0 +1,14 @@
+<div class="divcard">
+@for (item of roles; track $index) {
+    <a [routerLink]="['/',item.route]" style="text-decoration: none;" (click)="clicked()">
+    <mat-card class="card" appearance="outlined">
+        <mat-card-content >
+            <div class="card-content mat-typography mat-h1">
+                        <b>{{item.role}}</b>
+                        <img mat-card-lg-image [src]="item.url">
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </a>
+    }
+</div>

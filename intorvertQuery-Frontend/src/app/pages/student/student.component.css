@@ -1,0 +1,74 @@
+.submit-button{
+    border-radius: 20px;
+}
+
+.student-container{
+    display: flex;
+    justify-content: center;
+} 
+
+.student-field-container{
+    margin: 10px;
+}
+
+mat-toolbar{
+    margin-bottom: 20px;
+}
+
+.card-title{
+    margin-bottom: 20px;
+}
+
+.q-card-title{
+    font-size: 3rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+}
+
+.q-card{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+mat-nav-list{
+    height: auto;
+    overflow: visible;
+    flex-grow: 1;
+}
+
+mat-list-item{
+    padding: 10px;
+    height: auto;
+    /* display: inline-block; */
+}
+
+
+.q-asked{
+    font-size: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+}
+
+.q-asked-card{
+    border-radius: 10px;
+    height: 90vh;
+}
+
+.studIndicator{
+   border-radius: 20px;
+}
+
+.read-more{
+    color: rgb(75, 75, 243);
+}
+
+
+mat-list-item a:hover {
+   color: rgb(9, 138, 73);
+  }
+  
+  
+  mat-nav-list {
+    height: auto; /* Allow it to grow with content */
+  }

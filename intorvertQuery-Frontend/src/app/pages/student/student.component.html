@@ -1,0 +1,56 @@
+
+<button mat-flat-button style="background-color: #4CAF50; color: white;"  class="studIndicator">Student</button>
+
+
+
+<div class="student-container-main">
+    <form (submit)="onSubmit($event)">
+        <div class="student-container">
+            <mat-card class="q-card">
+                <mat-card-content>
+                    <div class="student-field-container">
+                        <div class="card-title">
+                            <mat-card-title class="q-card-title">Ask your doubts here</mat-card-title>
+                            <mat-card-subtitle>Feel free</mat-card-subtitle>
+                        </div>
+                        <mat-form-field style="width: 500px">
+                            <mat-label>Question</mat-label>
+                            <textarea
+                            [(ngModel)]="question"
+                            name="question"
+                            matInput
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="20"
+                            #questionArea></textarea>
+                        </mat-form-field> <br>
+    
+                        <button type="submit" class="submit-button" mat-raised-button><span style="color: rgb(31, 31, 243);">Submit</span></button>
+                    </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+    </form>
+    
+
+    <mat-card class="q-asked-card">
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title class="q-asked">Questions Asked</mat-card-title>
+                <mat-card-subtitle style="font-size: 13px;">Click on the question to see the entire question and answer</mat-card-subtitle>
+            </mat-card-header>
+            <mat-nav-list>
+                @for ( q of ques; track $index){
+                    <a [routerLink]="['/question/q-stud',q._id]" style="text-decoration: none;">
+                        <mat-list-item>
+                            {{$index+1}}. {{q.question}} 
+                        </mat-list-item>
+                    </a>
+                }
+            </mat-nav-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+  

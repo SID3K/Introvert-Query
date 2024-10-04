@@ -1,0 +1,21 @@
+.divcard{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    width: 400px;
+    max-width: 400px;
+    cursor: pointer;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  .card-content{
+    /* font-size: large; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(16, 133, 235);
+  }
+  

@@ -1,0 +1,50 @@
+<button mat-flat-button style="background-color: #200fd2; color: white;"  class="prof-indicator">Professor</button>
+
+<div class="professor-container">
+
+    <mat-tab-group>
+        @for (tab of quesCategory; track tab; let idx = $index) {
+          <mat-tab>
+            <ng-template mat-tab-label>{{tab.label}}</ng-template>
+            
+            <mat-card class="card-prof">
+                <mat-card-header>
+                    <mat-card-title class="q-list-header">
+                       {{tab.content.title}}
+                    </mat-card-title>
+                    @if(idx===2){
+                        <mat-card-subtitle>
+                            you can answer them by clicking on answer
+                        </mat-card-subtitle>
+                    }
+                </mat-card-header>      
+                <mat-nav-list>
+                    @for ( q of tab.content.quesList; track q; let idx2 = $index){
+                        @if(q!=null){
+                            <a [routerLink]="['/question/q-prof',q._id]" style="text-decoration: none;">
+                                <mat-list-item>
+                                    {{idx2+1}}. {{q.question}}
+                                    @if(q.isAnswered){<mat-icon style="vertical-align: middle;" class="tick-icon">check_circle</mat-icon>}
+                                    @else{<mat-icon style="vertical-align: middle;" class="cross-icon">cancel</mat-icon>}
+                                </mat-list-item>
+                            </a>
+                        }
+                    }@empty {
+                        <mat-list-item>No questions to display</mat-list-item>
+                    }
+                </mat-nav-list>
+            </mat-card>
+        </mat-tab>
+    }
+      </mat-tab-group>
+
+      <div class="indicator">
+        <p>
+            <mat-icon style="vertical-align: middle;" class="tick-icon">check_circle</mat-icon> - Answered
+        </p>
+        <p>
+            <mat-icon style="vertical-align: middle;" class="cross-icon">cancel</mat-icon> - Not Answered
+        </p>
+      </div>
+
+</div>
